@@ -1,0 +1,6 @@
+sceneSetups:
+- path: E:/GitHub/Unity_Skillbox_Homework1/Homework 26.05.2024/Assets/6 HomeWork/6
+    Homework Scene.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
