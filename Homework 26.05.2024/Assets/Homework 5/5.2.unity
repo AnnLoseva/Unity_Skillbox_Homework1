@@ -397,8 +397,6 @@ GameObject:
   - component: {fileID: 650052936}
   - component: {fileID: 650052935}
   - component: {fileID: 650052934}
-  - component: {fileID: 650052937}
-  - component: {fileID: 650052938}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -480,36 +478,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &650052937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650052933}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a9c4c161437794d82ae00b908549ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 7
---- !u!114 &650052938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650052933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cde2d52c5e9631428ebd5f0c3a028bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1984959926}
-  minTask1: 7
-  maxTask1: 21
-  array: 51000000160000000d000000360000000a000000220000000f0000001a0000004700000044000000
-  numberTask3: 55
 --- !u!1 &662166443
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +489,8 @@ GameObject:
   - component: {fileID: 662166446}
   - component: {fileID: 662166445}
   - component: {fileID: 662166444}
+  - component: {fileID: 662166448}
+  - component: {fileID: 662166447}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -578,6 +548,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &662166447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662166443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a9c4c161437794d82ae00b908549ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 0
+--- !u!114 &662166448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662166443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cde2d52c5e9631428ebd5f0c3a028bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1984959926}
+  minTask1: 7
+  maxTask1: 21
+  array: 51000000160000000d000000360000000a000000220000000f0000001a0000004700000044000000
+  numberTask3: 34
 --- !u!1 &1118318950
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 650052938}
+      - m_Target: {fileID: 662166448}
         m_TargetAssemblyTypeName: HomeWork5, Assembly-CSharp
         m_MethodName: Task1
         m_Mode: 1
@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 650052938}
+      - m_Target: {fileID: 662166448}
         m_TargetAssemblyTypeName: HomeWork5, Assembly-CSharp
         m_MethodName: Task3
         m_Mode: 1
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 650052938}
+      - m_Target: {fileID: 662166448}
         m_TargetAssemblyTypeName: HomeWork5, Assembly-CSharp
         m_MethodName: Task2
         m_Mode: 1
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 650052938}
+      - m_Target: {fileID: 662166448}
         m_TargetAssemblyTypeName: HomeWork5, Assembly-CSharp
         m_MethodName: Task4
         m_Mode: 1
