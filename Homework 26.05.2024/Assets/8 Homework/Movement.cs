@@ -7,32 +7,35 @@ using Random = System.Random;
 
 public class Movement : MonoBehaviour
 {
-
-    public float speed = 5;
+    public GameObject[] objects;
     public Transform[] points;
     public bool isRandom;
+    public float speed = 5;
 
     private Transform target;
     private int i;
     private Random random;
+     
     
 
     private void Start()
     {
-        random = new Random();
-        i = 1;
-        target = points[i];
 
-        transform.LookAt(target.position);
+        random = new Random();
+        i = 0;
+        target = points[i+1];
+
+        transform.LookAt(target.transform);
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        objects[i].transform.position = Vector3.MoveTowards(objects[i].transform.position, target.position, speed * Time.deltaTime);
 
-        if (transform.position == target.position)
+        if (objects[i].transform.position == target.position)
         {
             if(isRandom)
             {
@@ -53,13 +56,13 @@ public class Movement : MonoBehaviour
             if (i < points.Length - 1)
             {
                 i++;
-            }
-            else if (i >= points.Length - 1)
+            target = points[i + 1];
+        }
+            else if (i>= points.Length - 1)
             {
                 i = 0;
-            }
-
-            target = points[i];
+            target = points[i+1];
+        }
             transform.LookAt(target.transform);
         
 
@@ -67,7 +70,7 @@ public class Movement : MonoBehaviour
 
     private void RandomMovement()
     {
-        
+            
             i = random.Next(0, points.Length);
             target = points[i];
             transform.LookAt(target.transform);
