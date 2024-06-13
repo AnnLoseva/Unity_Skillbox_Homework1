@@ -30,8 +30,11 @@ public class Movement : MonoBehaviour
 
         random = new Random();
         npcCounter = 0;
-        targetCounter = 1;
+        targetCounter = 0;
         target = points[targetCounter];
+
+        Debug.Log("Object: " + npcCounter);
+        Debug.Log("Target: " + targetCounter);
 
         objects[npcCounter].transform.LookAt(target.transform);
     }
@@ -40,10 +43,13 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        objects[npcCounter].transform.position = Vector3.MoveTowards(objects[npcCounter].transform.position, target.position, speed * Time.deltaTime);
+        Move();
 
         if (objects[npcCounter].transform.position == target.position)
         {
+            Debug.Log("Object: " + npcCounter);
+            Debug.Log("Target: " + targetCounter);
+
             if (currentMovementType == 1)
             {
                 NormalMovement();
@@ -67,10 +73,15 @@ public class Movement : MonoBehaviour
 
     }
 
+    private void Move()
+    {
+        objects[npcCounter].transform.position = Vector3.MoveTowards(objects[npcCounter].transform.position, target.position, speed * Time.deltaTime);
+    }
+
     private void NormalMovement()
     {
 
-        if (targetCounter < points.Length - 1)
+        if (targetCounter < points.Length-1)
         {
             npcCounter++;
             targetCounter++;
@@ -97,7 +108,7 @@ public class Movement : MonoBehaviour
 
         if (!isBackward)
         {
-            if (targetCounter < points.Length)
+            if (targetCounter < points.Length-1)
             {
                 npcCounter++;
                 targetCounter++;
@@ -122,7 +133,7 @@ public class Movement : MonoBehaviour
                 isBackward = false;
 
                 npcCounter = 0;
-                targetCounter = 1;
+                targetCounter = 0;
             }
         }
 
@@ -139,6 +150,8 @@ public class Movement : MonoBehaviour
         targetCounter = rnd;
         target = points[targetCounter];
         objects[npcCounter].transform.LookAt(target.transform);
+
+        canSwitch = true;
 
     }
 

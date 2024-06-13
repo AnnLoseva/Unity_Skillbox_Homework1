@@ -502,12 +502,12 @@ MonoBehaviour:
   - {fileID: 649523569}
   - {fileID: 366120119}
   points:
-  - {fileID: 1306611807}
   - {fileID: 1131775232}
   - {fileID: 1485266879}
   - {fileID: 171624907}
+  - {fileID: 1306611807}
   speed: 5
-  currentMovementType: 3
+  currentMovementType: 1
 --- !u!4 &552529274
 Transform:
   m_ObjectHideFlags: 0
