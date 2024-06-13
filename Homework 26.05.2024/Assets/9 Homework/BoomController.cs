@@ -33,8 +33,8 @@ public class BoomController : MonoBehaviour
     {
         foreach(Rigidbody i in cubes)
         {
-            distanceToEpicenter = Vector3.Distance(transform.position, i.transform.position);
-           direction = i.transform.position - transform.forward;
+           distanceToEpicenter = Vector3.Distance(transform.position, i.transform.position);
+           direction = i.transform.position - transform.position;
            forceOnCube = (radius - distanceToEpicenter) * explosionPower * direction.normalized;
 
             i.AddForce(forceOnCube);
