@@ -19,7 +19,6 @@ public class BoomController : MonoBehaviour
     {
         Rigidbody rb = collider.gameObject.GetComponent<Rigidbody>();
         cubes.Add(rb);
-        Debug.Log(cubes[0].name);
         
     }
 

@@ -16,11 +16,14 @@ public class CameraChanger : MonoBehaviour
 
     private void Start()
     {
-        currentPoint = transform;
+        transform.position = cameraPoints[0].position;
+
+        currentPoint = transform;   
     }
     void Update()
     {
         transform.position = Vector3.Lerp(transform.position, currentPoint.position, speed*Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, currentPoint.rotation, speed * Time.deltaTime);
     }
 
     public void ChangePoint1()
