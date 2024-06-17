@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class CameraChanger : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
     public Transform[] cameraPoints;
     public float speed;
