@@ -17,7 +17,7 @@ public class CarController : MonoBehaviour
     private void Update()
     {
         ForwardBackward();
-        //Turn();
+        Turn();
     }
 
     private void ForwardBackward()
@@ -41,9 +41,7 @@ public class CarController : MonoBehaviour
     private void Turn()
     {
         turnAxis = Input.GetAxis("Horizontal");
-
-        Quaternion targetRotation = Quaternion.Euler(wheels[0].gameObject.transform.rotation.x, turnAxis * turnDegree, wheels[0].gameObject.transform.rotation.z);
-
-        wheels[0].gameObject.transform.rotation = Quaternion.Lerp(wheels[0].gameObject.transform.rotation, targetRotation, 10 * Time.deltaTime);
+        JointSpring spring = wheels[0].spring;
+        spring.targetPosition = turnAxis * turnDegree;
     }
 }

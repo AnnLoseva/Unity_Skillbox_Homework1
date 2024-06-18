@@ -5,7 +5,8 @@ using UnityEngine;
 public class BallPusher : MonoBehaviour
 {
     [SerializeField] private Transform[] targetPoints;
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float pushSpeed = 5f;
+    [SerializeField] private float prepareSpeed = 5f;
     [SerializeField] private float power = 50f;
     [SerializeField] private Rigidbody rb;
 
@@ -44,7 +45,14 @@ public class BallPusher : MonoBehaviour
 
     private void PusherAnimation()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPoints[pointCounter].position, speed * Time.deltaTime);
+        if (pointCounter != 1)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPoints[pointCounter].position, pushSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPoints[pointCounter].position, prepareSpeed * Time.deltaTime);
+        }
 
         if (transform.position == targetPoints[pointCounter].position)
         {
