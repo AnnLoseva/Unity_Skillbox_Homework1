@@ -22,8 +22,7 @@ public class CameraMovement : MonoBehaviour
     }
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, currentPoint.position, speed*Time.deltaTime);
-        transform.rotation = Quaternion.Lerp(transform.rotation, currentPoint.rotation, speed * Time.deltaTime);
+         transform.SetPositionAndRotation(Vector3.Lerp(transform.position, currentPoint.position, speed * Time.deltaTime), Quaternion.Lerp(transform.rotation, currentPoint.rotation, speed * Time.deltaTime));
     }
 
     public void ChangePoint1()

@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnterCollider : MonoBehaviour
+public class EnterDoorDetector : MonoBehaviour
 {
-    [SerializeField] private Doors doors;
+    [SerializeField] private DoorsController doorsController;
 
     [SerializeField] private Collider ball;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other == ball)
         {
-            doors.Enter();
+            doorsController.EnterDoor();
         }
     }
 }

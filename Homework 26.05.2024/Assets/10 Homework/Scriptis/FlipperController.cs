@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlipperController : MonoBehaviour
 {
@@ -11,9 +12,11 @@ public class FlipperController : MonoBehaviour
     [SerializeField] private float pressedTarget = 45f;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
+    [SerializeField] private Text text;
 
     private bool leftAudioOn;
     private bool rightAudioOn;
+    public int score = 0;
 
 
     private void Start()
@@ -67,6 +70,13 @@ public class FlipperController : MonoBehaviour
         rightFlipper.spring = rightJointSpring;
         leftFlipper.useLimits= true;
         rightFlipper.useLimits= true;
+    }
+
+    public void Score(int points)
+    {
+        score += points;
+        text.text = score.ToString();
+
     }
 
 

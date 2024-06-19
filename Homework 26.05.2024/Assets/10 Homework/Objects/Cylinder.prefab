@@ -125,6 +125,7 @@ MonoBehaviour:
   normalBrightness: 0.5
   audioSource: {fileID: 4737749776407600145}
   audioClip: {fileID: 8300000, guid: 0510a8064fc53e540b40d8f1150f8752, type: 3}
+  points: 10
 --- !u!82 &4737749776407600145
 AudioSource:
   m_ObjectHideFlags: 0

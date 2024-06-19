@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc06f1e9998804469cb562f202f6d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enter: {fileID: 6604025727241781355}
-  exit: {fileID: 2251472546802303013}
-  enterCollision: {fileID: 4843225279085351061}
-  exitCollision: {fileID: 2177181671159201465}
+  enterDoor: {fileID: 6604025727241781355}
+  exitDoor: {fileID: 2251472546802303013}
+  enterDoorCollision: {fileID: 4843225279085351061}
+  exitDoorCollision: {fileID: 2177181671159201465}
 --- !u!1 &2177181671159201465
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ced04fe1a1b93d40b9d8003cfffd486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doors: {fileID: 4409746998369696168}
-  ball: {fileID: 0}
+  doorsController: {fileID: 0}
+  exitBall: {fileID: 0}
 --- !u!1 &2251472546802303013
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +184,6 @@ GameObject:
   - component: {fileID: 4052109933970550926}
   - component: {fileID: 5444130207778089970}
   - component: {fileID: 1021795501041878483}
-  - component: {fileID: 1216180386916326859}
   - component: {fileID: 4002630967816599447}
   m_Layer: 0
   m_Name: ExitDoor
@@ -279,20 +278,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1216180386916326859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2251472546802303013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc5898e3668f6e469639c1c926c8a36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doors: {fileID: 4409746998369696168}
-  ball: {fileID: 0}
 --- !u!54 &4002630967816599447
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -438,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc5898e3668f6e469639c1c926c8a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doors: {fileID: 4409746998369696168}
+  doorsController: {fileID: 0}
   ball: {fileID: 0}
 --- !u!1 &6604025727241781355
 GameObject:
@@ -452,7 +437,6 @@ GameObject:
   - component: {fileID: 3327553819753893863}
   - component: {fileID: 8124238839211644839}
   - component: {fileID: 6993503437016859235}
-  - component: {fileID: 3074551714623349731}
   - component: {fileID: 2873388912336999288}
   m_Layer: 0
   m_Name: EnterDoor
@@ -547,20 +531,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3074551714623349731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6604025727241781355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc5898e3668f6e469639c1c926c8a36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doors: {fileID: 4409746998369696168}
-  ball: {fileID: 0}
 --- !u!54 &2873388912336999288
 Rigidbody:
   m_ObjectHideFlags: 0
