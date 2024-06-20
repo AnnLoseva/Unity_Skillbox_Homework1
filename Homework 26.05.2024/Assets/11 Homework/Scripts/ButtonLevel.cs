@@ -8,8 +8,14 @@ public class ButtonLevel : MonoBehaviour
 
     public void OnButtonClick()
     {
+
+        if (levelIndex >= GameData.levelIndex)
+        {
+            GameData.levelIndex = levelIndex + 1;
+        }
+
         SceneManager.LoadScene(levelIndex);
-        Debug.Log("pressed");
+
     }
 
     private void Start()
@@ -17,8 +23,8 @@ public class ButtonLevel : MonoBehaviour
         Button button = GetComponent<Button>();
         if (button.gameObject.name == "Continue")
         {
-            levelIndex = GameData.levelIndex;
-            if(levelIndex == 0 )
+            levelIndex = GameData.levelIndex -1;
+            if(levelIndex <= 1 )
             {
                 button.interactable = false;
             }
@@ -27,5 +33,6 @@ public class ButtonLevel : MonoBehaviour
         {
            button.interactable = false;
         }
+
     }
 }

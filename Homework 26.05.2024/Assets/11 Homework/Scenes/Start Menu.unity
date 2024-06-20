@@ -385,9 +385,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 63401013619504992, guid: f968f64e345168f43b59543c0cc3efc9, type: 3}
+      propertyPath: levelIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5866342712374600515, guid: f968f64e345168f43b59543c0cc3efc9, type: 3}
       propertyPath: m_Name
       value: Menu Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995132773298069707, guid: f968f64e345168f43b59543c0cc3efc9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6636147942201625173, guid: f968f64e345168f43b59543c0cc3efc9, type: 3}
       propertyPath: m_Pivot.x
@@ -468,6 +476,22 @@ PrefabInstance:
     - target: {fileID: 6636147942201625173, guid: f968f64e345168f43b59543c0cc3efc9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6747570677658160882, guid: f968f64e345168f43b59543c0cc3efc9, type: 3}
+      propertyPath: levelIndex
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570669072982256104, guid: f968f64e345168f43b59543c0cc3efc9, type: 3}
+      propertyPath: levelIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013745558984900755, guid: f968f64e345168f43b59543c0cc3efc9, type: 3}
+      propertyPath: levelIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961988262220667531, guid: f968f64e345168f43b59543c0cc3efc9, type: 3}
+      propertyPath: levelIndex
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
