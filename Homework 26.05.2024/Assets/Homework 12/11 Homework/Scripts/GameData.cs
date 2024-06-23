@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class GameData
 {
-    public static int levelIndex;
+    public static int levelIndex = 1;
 }

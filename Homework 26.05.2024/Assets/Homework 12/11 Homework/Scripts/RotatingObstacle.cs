@@ -31,7 +31,18 @@ public class RotatingObstacle : MonoBehaviour
     {
         isHitting = GetRandomBool();
 
+        if (isHitting == animator.GetBool("isHitting"))
+        {
+        }
+        else
+        {
+            animator.SetBool("isHitting", isHitting);
+            animator.SetBool("start", false);
+        }
+    }
 
+    public void ChangeMaterial()
+    {
         Random rnd = new Random();
         int textureIndex = rnd.Next(0, material.Length);
 
@@ -39,14 +50,19 @@ public class RotatingObstacle : MonoBehaviour
         {
             material.mainTexture = texture[textureIndex];
         }
-
-        animator.SetBool("isHitting", isHitting);
-        animator.SetBool("start", false);
     }
 
     public void StartAction()
     {
         animator.SetBool("start", true);
+    }
+
+    public void RandomRotation() 
+    {
+        Random rnd = new Random();
+        int rotationDegree = rnd.Next(0,3) * 90;
+
+        transform.rotation = Quaternion.Euler(0, rotationDegree, 0);
     }
 
     private bool GetRandomBool()

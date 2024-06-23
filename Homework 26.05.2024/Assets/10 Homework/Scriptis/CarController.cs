@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
-    [SerializeField] private HingeJoint[] wheels;
+    [SerializeField] WheelCollider frontRight;
+    [SerializeField] WheelCollider frontLeft;
+    [SerializeField] WheelCollider backRight;
+    [SerializeField] WheelCollider backLeft;
 
-    [SerializeField] private float speed = 300;
-    [SerializeField] private float turnDegree = 45;
-    [SerializeField] private float motorForce = 100;
+    [SerializeField] private float acceleration = 500f;
+    [SerializeField] private float breakingForce = 300f;
+    [SerializeField] private float maxTurnAngle = 15f;
+
+    private float currentAcceleration = 0f;
+    private float currentBreakingForce = 0f;
+    private float currentTurnAngle = 0f;
 
     private float forwardAxis;
     private float turnAxis;
@@ -18,6 +25,7 @@ public class CarController : MonoBehaviour
     {
         ForwardBackward();
         Turn();
+        Break();
     }
 
     private void ForwardBackward()
@@ -25,23 +33,41 @@ public class CarController : MonoBehaviour
 
         forwardAxis = Input.GetAxis("Vertical");
 
-        foreach(HingeJoint wheel in wheels)
-        {
-            JointMotor motor = wheel.motor;
-            motor.force = motorForce;
-            motor.targetVelocity = forwardAxis * speed;
-            wheel.motor = motor;
-            wheel.useMotor = true;
-        }
+        currentAcceleration = acceleration * forwardAxis;
 
+        backRight.motorTorque = currentAcceleration;
+        backLeft.motorTorque = currentAcceleration;
     }
 
-
-    // Ќе понимаю, как нормально сделать поворот...
     private void Turn()
     {
         turnAxis = Input.GetAxis("Horizontal");
-        JointSpring spring = wheels[0].spring;
-        spring.targetPosition = turnAxis * turnDegree;
+        currentTurnAngle = maxTurnAngle * turnAxis;
+
+        Debug.Log(currentTurnAngle);
+
+        frontLeft.steerAngle = currentTurnAngle;
+        frontRight.steerAngle = currentTurnAngle;
+
+    }
+
+    private void Break()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            currentBreakingForce = breakingForce;
+        }
+        else
+        {
+            {
+                currentBreakingForce = 0f;
+            }
+        }
+
+        backLeft.brakeTorque = currentBreakingForce;
+        backRight.brakeTorque = currentBreakingForce;
+        frontLeft.brakeTorque = currentBreakingForce;
+        frontRight.brakeTorque = currentBreakingForce;
+
     }
 }
